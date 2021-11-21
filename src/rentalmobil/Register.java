@@ -5,6 +5,9 @@
  */
 package rentalmobil;
 
+import javax.swing.JOptionPane;
+import utils.Functions;
+
 /**
  *
  * @author Umam
@@ -30,15 +33,15 @@ public class Register extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        NamaBox = new javax.swing.JTextField();
+        txt_nama = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        EmailRegisBox = new javax.swing.JTextField();
+        txt_email = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         CancelRegis = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        PassRegisBox = new javax.swing.JTextField();
+        txt_password = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        Register = new javax.swing.JButton();
+        btnRegister = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
@@ -57,9 +60,9 @@ public class Register extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nama");
 
-        EmailRegisBox.addActionListener(new java.awt.event.ActionListener() {
+        txt_email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailRegisBoxActionPerformed(evt);
+                txt_emailActionPerformed(evt);
             }
         });
 
@@ -83,9 +86,9 @@ public class Register extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("REGISTER");
 
-        PassRegisBox.addActionListener(new java.awt.event.ActionListener() {
+        txt_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PassRegisBoxActionPerformed(evt);
+                txt_passwordActionPerformed(evt);
             }
         });
 
@@ -94,13 +97,13 @@ public class Register extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Email");
 
-        Register.setBackground(new java.awt.Color(255, 255, 255));
-        Register.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        Register.setText("Register");
-        Register.setBorderPainted(false);
-        Register.addActionListener(new java.awt.event.ActionListener() {
+        btnRegister.setBackground(new java.awt.Color(255, 255, 255));
+        btnRegister.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        btnRegister.setText("Register");
+        btnRegister.setBorderPainted(false);
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterActionPerformed(evt);
+                btnRegisterActionPerformed(evt);
             }
         });
 
@@ -114,15 +117,15 @@ public class Register extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(EmailRegisBox, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                        .addComponent(txt_email, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                         .addComponent(jLabel2)
-                        .addComponent(NamaBox)
+                        .addComponent(txt_nama)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                             .addComponent(CancelRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Register))
-                        .addComponent(PassRegisBox, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(btnRegister))
+                        .addComponent(txt_password, javax.swing.GroupLayout.Alignment.TRAILING)))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -133,19 +136,19 @@ public class Register extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addGap(3, 3, 3)
-                .addComponent(NamaBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EmailRegisBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PassRegisBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CancelRegis)
-                    .addComponent(Register))
+                    .addComponent(btnRegister))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -194,21 +197,36 @@ public class Register extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EmailRegisBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailRegisBoxActionPerformed
+    private void txt_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EmailRegisBoxActionPerformed
+    }//GEN-LAST:event_txt_emailActionPerformed
 
     private void CancelRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelRegisActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CancelRegisActionPerformed
 
-    private void PassRegisBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassRegisBoxActionPerformed
+    private void txt_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passwordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PassRegisBoxActionPerformed
+    }//GEN-LAST:event_txt_passwordActionPerformed
 
-    private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterActionPerformed
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
+        try {
+            String nama = txt_nama.getText();
+            String email = txt_email.getText();
+            String password = txt_password.getText();
+            String user = "INSERT INTO users (nama, email, password) VALUES('" + nama + "', '" + email + "', '" + password + "')";
+            java.sql.Connection conn = Functions.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(user);
+            pst.executeUpdate(user);
+
+            JOptionPane.showMessageDialog(null, "Berhasil Register");
+            this.setVisible(false);
+            new Login().setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_btnRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,10 +266,7 @@ public class Register extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelRegis;
-    private javax.swing.JTextField EmailRegisBox;
-    private javax.swing.JTextField NamaBox;
-    private javax.swing.JTextField PassRegisBox;
-    private javax.swing.JButton Register;
+    private javax.swing.JButton btnRegister;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -261,5 +276,8 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField txt_email;
+    private javax.swing.JTextField txt_nama;
+    private javax.swing.JTextField txt_password;
     // End of variables declaration//GEN-END:variables
 }
